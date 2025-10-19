@@ -1,7 +1,11 @@
 // Package models
 package models
 
-type Node struct {
-	User
-	Next *Node
+type NodeSong struct {
+	Data Song
+	Next *NodeSong
+}
+
+func NewNode(data Song) *NodeSong {
+	return &NodeSong{Data: data, Next: nil}
 }

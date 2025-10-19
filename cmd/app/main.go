@@ -10,7 +10,8 @@ import (
 func main() {
 	handlersUsers := &handlers.MyUser{}
 	handlersRegister := http.NewServeMux()
-	handlersRegister.HandleFunc("/login/user", handlersUsers.Login)
+	handlersRegister.HandleFunc("/user/login", handlersUsers.Login)
+	handlersRegister.HandleFunc("/user/update", handlersUsers.UpdateUser)
 
 	log.Fatal(http.ListenAndServe(":8080", handlersRegister))
 }
